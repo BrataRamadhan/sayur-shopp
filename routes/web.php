@@ -10,6 +10,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('profile/', 'HomeController@profile')->name('profile');
+Route::get('update-profile/{id}', 'HomeController@update')->name('update-profile');
+Route::put('updatedata/{id}', 'HomeController@updateData')->name('updatedata');
 //Pesan Barang
 Route::get('/pesan/{id}', 'PesanController@order')->name('pesan');
 Route::post('/pesan/{id}', 'PesanController@orderitem');

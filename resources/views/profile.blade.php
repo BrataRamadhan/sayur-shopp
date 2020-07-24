@@ -37,9 +37,10 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-12 offset-md-4">
-                            <button type="submit" id="btn-register" class="primary-btn btn-register">
-                                {{ __('Update Profile') }}
-                            </button>
+                            {{-- <button type="submit" id="btn-register" class="primary-btn btn-register">
+                                {{route('update-profile')}}
+                            </button> --}}
+                            <a href="{{route('update-profile',[$user->id])}}" class="primary-btn btn-register"></i> Update Profile</a>
                         </div>
                     </div>
                 </form>

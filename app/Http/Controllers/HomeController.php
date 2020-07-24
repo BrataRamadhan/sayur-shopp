@@ -53,4 +53,21 @@ class HomeController extends Controller
         $barangs = DB::table('barangs')->where('nama_barang', 'ilike', "%" . $cari . "%")->paginate();
         return view('homepage', compact('barangs'));
     }
+
+    public function update($id){
+        $user = User::where('id', $id)->first();
+        return view('update-profile',compact('user'));
+    }
+
+    public function updateData(Request $request, $id){
+        $edit_data = User::findorfail($id);
+
+        $edit_data->name = $request->get('name');
+        $edit_data->alamat = $request->get('alamat');
+        $edit_data->nohp = $request->get('nohp');
+
+        $edit_data->save();
+
+        return redirect('profile');
+    }
 }
